@@ -1,0 +1,16 @@
+{
+  "name": "tdd",
+  "scripts": {
+    "test": "mocha"
+  },
+  "version": "1.0.0",
+  "description": "Repo to store my progress practicing TDD",
+  "main": "index.js",
+  "repository": "https://github.com/losonczylaci/tdd.git",
+  "author": "Laszlo Losonczy <losonczylaci@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.2.2"
+  }
+}
