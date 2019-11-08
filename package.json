@@ -2,6 +2,7 @@
   "name": "tdd",
   "scripts": {
     "test": "mocha",
+    "cucumber": "cucumber-js katas/**/features/*.feature ",
     "eslint": "eslint ."
   },
   "version": "1.0.0",
@@ -15,6 +16,7 @@
     "mocha": "^6.2.2"
   },
   "devDependencies": {
+    "cucumber": "^6.0.3",
     "eslint": "^6.6.0"
   }
 }
