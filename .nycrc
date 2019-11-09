@@ -1,0 +1,10 @@
+
+{
+  "reporter": [
+    "text"
+  ],
+  "exclude": [
+    "**/*.spec.js",
+    ".*.js"
+  ]
+}

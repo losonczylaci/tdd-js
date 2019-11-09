@@ -2,7 +2,8 @@
   "name": "tdd",
   "scripts": {
     "test": "mocha",
-    "eslint": "eslint ."
+    "eslint": "eslint .",
+    "coverage": "nyc mocha --report=text"
   },
   "version": "1.0.0",
   "description": "Repo to store my progress practising TDD",
@@ -15,6 +16,7 @@
     "mocha": "^6.2.2"
   },
   "devDependencies": {
-    "eslint": "^6.6.0"
+    "eslint": "^6.6.0",
+    "nyc": "^14.1.1"
   }
 }
