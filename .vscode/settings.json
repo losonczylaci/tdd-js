@@ -1,0 +1,8 @@
+{
+    "editor.formatOnSave": true,
+    "triggerTaskOnSave.tasks": {
+        "test": [
+            "*.js"
+        ]
+    }
+}
