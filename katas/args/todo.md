@@ -1,4 +1,4 @@
-# Todos
+# Todo
 
 [ ] Parse `-l -p 8080 -d /usr/logs`
 [x] ArgsSchema class
@@ -10,9 +10,9 @@
     [x] true if present
     [x] false if not
 
-[*] handle int values
-    [ ] if present use the parsed value
-    [ ] if not, use 0 as default
+[x] handle int values
+    [x] if present use the parsed value
+    [x] if not, use 0 as default
 [ ] handle string values
     [ ] if present use the parsed value
     [ ] if not, use "" as default

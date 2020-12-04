@@ -5,9 +5,33 @@ class FlagArg {
 
     obtainArgValue(userInput) {
         if (userInput.includes(`-${this.name}`))
-            return { name: this.name, value: true }
+            return new Arg(this.name, true)
         else
-            return { name: this.name, value: false }
+            return new Arg(this.name, false)
+    }
+}
+
+class IntArg {
+    constructor(name) {
+        this.name = name
+    }
+
+    obtainArgValue(userInput) {
+        const onArgNameMatch = arg => arg === `-${this.name}`
+        const argIndex = userInput.findIndex(onArgNameMatch)
+        if (argIndex === -1) {
+            return new Arg(this.name, 0)
+        }
+        const valueIndex = argIndex + 1
+        const value = Number(userInput[valueIndex])
+        return new Arg(this.name, value)
+    }
+}
+
+class Arg {
+    constructor(name, value) {
+        this.name = name
+        this.value = value
     }
 }
 class ArgsSchema {
@@ -18,6 +42,11 @@ class ArgsSchema {
     addFlag(name) {
         const f = new FlagArg(name)
         this.args.push(f)
+    }
+
+    addInt(name) {
+        const i = new IntArg(name)
+        this.args.push(i)
     }
 }
 
