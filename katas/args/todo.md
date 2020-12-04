@@ -1,14 +1,16 @@
 # Todos
 
 [ ] Parse `-l -p 8080 -d /usr/logs`
-[ ] ArgsSchema class
-[ ] `args.parser(schema, args)`
-[ ] `args.getValue('l')`
-    [ ] handle flags
-    [ ] true if present
-    [ ] false if not
+[x] ArgsSchema class
+[x] Args class
+[x] `args.parser(schema, args)`
+[x] `args.getValue('l')`
 
-[ ] handle int values
+[x] handle flags `schema.addFlag('l')`
+    [x] true if present
+    [x] false if not
+
+[*] handle int values
     [ ] if present use the parsed value
     [ ] if not, use 0 as default
 [ ] handle string values
