@@ -1,7 +1,9 @@
-class FlagArg {
+class BaseArg {
     constructor(name) {
         this.name = name
     }
+}
+class FlagArg extends BaseArg {
 
     obtainArgValue(userInput) {
         if (userInput.includes(`-${this.name}`))
@@ -11,10 +13,7 @@ class FlagArg {
     }
 }
 
-class IntArg {
-    constructor(name) {
-        this.name = name
-    }
+class IntArg extends BaseArg {
 
     obtainArgValue(userInput) {
         const onArgNameMatch = arg => arg === `-${this.name}`
@@ -24,6 +23,19 @@ class IntArg {
         }
         const valueIndex = argIndex + 1
         const value = Number(userInput[valueIndex])
+        return new Arg(this.name, value)
+    }
+}
+
+class StringArg extends BaseArg {
+
+    obtainArgValue(userInput) {
+        const onArgNameMatch = arg => arg === `-${this.name}`
+        const argIndex = userInput.findIndex(onArgNameMatch)
+        if (argIndex === -1) {
+            return new Arg(this.name, '')
+        }
+        const value = userInput[argIndex + 1]
         return new Arg(this.name, value)
     }
 }
@@ -40,13 +52,15 @@ class ArgsSchema {
     }
 
     addFlag(name) {
-        const f = new FlagArg(name)
-        this.args.push(f)
+        this.args.push(new FlagArg(name))
     }
 
     addInt(name) {
-        const i = new IntArg(name)
-        this.args.push(i)
+        this.args.push(new IntArg(name))
+    }
+
+    addString(name) {
+        this.args.push(new StringArg(name))
     }
 }
 

@@ -1,6 +1,6 @@
 # Todo
 
-[ ] Parse `-l -p 8080 -d /usr/logs`
+[x] Parse `-l -p 8080 -d /usr/logs`
 [x] ArgsSchema class
 [x] Args class
 [x] `args.parser(schema, args)`
@@ -13,9 +13,9 @@
 [x] handle int values
     [x] if present use the parsed value
     [x] if not, use 0 as default
-[ ] handle string values
-    [ ] if present use the parsed value
-    [ ] if not, use "" as default
+[x] handle string values
+    [x] if present use the parsed value
+    [x] if not, use "" as default
 
 [ ] argument mismatch should throw an error
 [ ] order independent parsing

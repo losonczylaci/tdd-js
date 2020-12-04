@@ -26,4 +26,21 @@ describe('args kata', () => {
         expect(this.args.getValue('q')).to.equal(0)
     })
 
+    it('should handle string type arguments', () => {
+        this.schema.addString('n')
+        this.schema.addString('m')
+        this.args.parse(this.schema, ['-n', 'Mark'])
+        expect(this.args.getValue('n')).to.equal('Mark')
+        expect(this.args.getValue('m')).to.equal('')
+    })
+
+    it('should handle schema with mixed types', () => {
+        this.schema.addString('d')
+        this.schema.addFlag('l')
+        this.schema.addInt('p')
+        this.args.parse(this.schema, ['-l', '-p', '8080', '-d', '/usr/logs'])
+        expect(this.args.getValue('l')).to.equal(true)
+        expect(this.args.getValue('p')).to.equal(8080)
+        expect(this.args.getValue('d')).to.equal('/usr/logs')
+    })
 })
